@@ -1,7 +1,53 @@
 <html>
     <head>
         <title>Shoes</title>
-        <style>
+        <style type="text/css">
+            #color{
+                color:red;
+            }
+            body{
+                background-color:yellow;
+            }
+            #div1{
+                width: 50%          
+            }
+            #div2{
+                width:50%
+            }
+            #div3{
+                width: 50%
+            }
+            #P1{
+                font-size: 20pt
+            }
+            #P2{
+                font-size:20pt
+            }
+            #P3{
+                font-size:20pt
+            }
+            #output1{
+                width:50%;
+                float:right;
+                font-size:20pt;
+                color:orangered
+            }
+            #output2{
+                width:50%;
+                float: right;
+                font-size: 20pt;
+                color:orangered;
+            }
+            #output3{
+                width:50%;
+                float: right;
+                font-size: 20pt;
+                color:orangered;                
+            }
+            #button4{
+                display:flex;
+                justify-content: center
+            }
             img{
                 width:200px;
             }
@@ -10,57 +56,57 @@
             }
         </style>
         <script>
-            function Product1(){
+            function product1(){
                 var quantity1 = document.getElementById("quantity1");
                 var output1 = document.getElementById("output1");
                 var product1 = document.getElementById("product1");
                 var retail1 = 109.99;
                 var wholesale1 = 89.99;
-                var profit1 = (retail1*parseFloat(quantity1.value))-(wholesale1*parseFloat(quantity1.value));
-                var subtotal1 = (retail1*parseFloat(quantity1.value));
+                var profit1 = (retail1*parseInt(quantity1.value)) - (wholesale1*parseInt(quantity1.value));
+                var subtotal1 = (retail1*parseInt(quantity1.value));
                 var build1 = "";
-                build1+= "You bought "+quantity1.value+" Air Prestos.<br>"
-                build1+= "The total retail for the Air Prestos is "+ subtotal1
-                console.log("retail per item = "+ retail1)
-                console.log("Amount sold:" + parseFloat(quantity1.value))
-                console.log("________________________________________")
-                console.log("Profit made = "+ profit1)
-                output1.innerHTML = build1
+                build1+= "You bought " + quantity1.value + " Air Prestos.<br>";
+                build1+= "The total retail for the Air Prestos is "+ subtotal1;
+                console.log("Retail per item = "+ retail1);
+                console.log("Amount sold:" + parseInt(quantity1.value));
+                console.log("________________________________________");
+                console.log("Profit made = "+ profit1);
+                output1.innerHTML = build1;
             }
-            function Product2(){
+            function product2(){
                 var quantity2 = document.getElementById("quantity2");
                 var output2 = document.getElementById("output2");
                 var product2 = document.getElementById("product2");
                 var retail2 = 149.99;
                 var wholesale2 = 129.99;
-                var profit2 = (retail2*parseFloat(quantity2.value))-(wholesale2*parseFloat(quantity2.value));
-                var subtotal2 = (retail2*parseFloat(quantity2.value));
+                var profit2 = (retail2*parseInt(quantity2.value)) - (wholesale2*parseInt(quantity2.value));
+                var subtotal2 = (retail2*parseInt(quantity2.value));
                 var build2 = "";
-                build2+= "You bought "+quantity2.value+" NMD XR1.<br>"
-                build2+= "The total retail for the NMD XR1 is"+ subtotal2
-                console.log("retail per item = "+ retail2)
-                console.log("Amount sold: "+ parseFloat(quantity2.value))
-                console.log("________________________________________")
-                console.log("Profit made = "+ profit2)
-                output2.innerHTML = build2                
+                build2+= "You bought " + quantity2.value + " NMD XR1.<br>";
+                build2+= "The total retail for the NMD XR1 is"+ subtotal2;
+                console.log("Retail per item = "+ retail2);
+                console.log("Amount sold: "+ parseInt(quantity2.value));
+                console.log("________________________________________");
+                console.log("Profit made = "+ profit2);
+                output2.innerHTML = build2;
             }
 
-            function Product3(){
+            function product3(){
                 var quantity3 = document.getElementById("quantity3");
                 var output3 = document.getElementById("output3");
                 var product3 = document.getElementById("product3");
                 var retail3 = 179.99;
                 var wholesale3 = 159.99;
-                var profit3 = (retail3*parseFloat(quantity3.value))-(wholesale3*parseFloat(quantity3.value));
-                var subtotal3 = (retail3*parseFloat(quantity3.value));
+                var profit3 = (retail3*parseInt(quantity3.value)) - (wholesale3*parseInt(quantity3.value));
+                var subtotal3 = (retail3*parseInt(quantity3.value));
                 var build3 = "";
-                build3+= "You bought "+quantity3.value+" Ultra Boost.<br>"
-                build3+= "The total retail for the Ultra Boost is "+ subtotal3
-                console.log("retail per item = "+ retail3)
-                console.log("Amount bought = "+ parseFloat(quantity3.value))
-                console.log("________________________________________")
-                console.log("Profit made = "+ profit3)
-                output3.innerHTML = build3
+                build3+= "You bought " + quantity3.value + " Ultra Boost.<br>";
+                build3+= "The total retail for the Ultra Boost is "+ subtotal3;
+                console.log("Retail per item = "+ retail3);+
+                console.log("Amount bought = "+ parseInt(quantity3.value));
+                console.log("________________________________________");
+                console.log("Profit made = "+ profit3);
+                output3.innerHTML = build3;
             }
         </script>
     </head>
@@ -74,9 +120,9 @@
             <p>
                 -New and nice comforting Nike shoes <br> -Great athletic shoe <br> -Comfortable material used
             </p>
-            Quantity: <input type="text" id="Quantity">
+            Quantity: <input type="text" id="quantity1">
                 <div id = "output1"></div>
-                    <button onclick = "Product1();">
+                    <button onclick = "product1();">
                         Buy
                     </button>
         </div>
@@ -89,9 +135,9 @@
             <p>
                 -Has very comfortable boost <br> -Durable material for stylish running shoes <br> -Uses soft material as well
             </p>
-            Quantity: <input type="text" id="Quantity">
-                <div id = "output1"></div>
-                    <button onclick = "Product2();">
+            Quantity: <input type="text" id="quantity2">
+                <div id = "output3"></div>
+                    <button onclick = "product2();">
                         Buy
                     </button>
         </div>
@@ -106,10 +152,10 @@
             </p>
 
             Quantity : <input type="text" id="quantity3">
-                <div id = "output1"></div>
-                <button onclick = "Product3();">
-                    Buy
-                </button>
+                <div id = "output3"></div>
+                    <button onclick = "product3();">
+                        Buy
+                    </button>
         </div>
     </body>
 </html>
