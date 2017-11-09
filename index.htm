@@ -6,7 +6,7 @@
                 color:red;
             }
             body{
-                background-color:yellow;
+                background-color:lightskyblue;
             }
             #div1{
                 width: 50%          
@@ -30,19 +30,19 @@
                 width:50%;
                 float:right;
                 font-size:20pt;
-                color:orangered
+                color:red
             }
             #output2{
                 width:50%;
                 float: right;
                 font-size: 20pt;
-                color:orangered;
+                color:red;
             }
             #output3{
                 width:50%;
                 float: right;
                 font-size: 20pt;
-                color:orangered;                
+                color:red;                
             }
             #button4{
                 display:flex;
@@ -66,7 +66,7 @@
                 var subtotal1 = (retail1*parseInt(quantity1.value));
                 var build1 = "";
                 build1+= "You bought " + quantity1.value + " Air Prestos.<br>";
-                build1+= "The total retail for the Air Prestos is "+ subtotal1;
+                build1+= "The retail price for the Air Prestos is "+ subtotal1;
                 console.log("Retail per item = "+ retail1);
                 console.log("Amount sold:" + parseInt(quantity1.value));
                 console.log("________________________________________");
@@ -83,7 +83,7 @@
                 var subtotal2 = (retail2*parseInt(quantity2.value));
                 var build2 = "";
                 build2+= "You bought " + quantity2.value + " NMD XR1.<br>";
-                build2+= "The total retail for the NMD XR1 is "+ subtotal2;
+                build2+= "The retail price for the NMD XR1 is "+ subtotal2;
                 console.log("Retail per item = "+ retail2);
                 console.log("Amount sold: "+ parseInt(quantity2.value));
                 console.log("________________________________________");
@@ -101,7 +101,7 @@
                 var subtotal3 = (retail3*parseInt(quantity3.value));
                 var build3 = "";
                 build3+= "You bought " + quantity3.value + " Ultra Boost.<br>";
-                build3+= "The total retail for the Ultra Boost is "+ subtotal3;
+                build3+= "The retail price for the Ultra Boost is "+ subtotal3;
                 console.log("Retail per item = "+ retail3);
                 console.log("Amount bought = "+ parseInt(quantity3.value));
                 console.log("________________________________________");
@@ -110,7 +110,7 @@
             }
             function final(){
                 var output4 = document.getElementById("output4");
-                var total = (subtotal1 + subtotal2 + subtotal3) * 1.0875;
+                var total = (subtotal1.value + subtotal2.value + subtotal3.value) * 1.0875;
                 var build4 = "";
                 build4+= "You bought " + quantity1.value + "Air Prestos.<br>";
                 build4+= "You bought " + quantity2.value + "NMD XR1.<br>";
