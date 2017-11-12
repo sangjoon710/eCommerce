@@ -1,30 +1,31 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Shoes</title>
+        <title> Athletic Shoes </title>
         <style>
             img{
                 width:200px;
             }
             .test{
-                background-color: #03a003;
+                background-color: #999999;
                 height: 50px;
-                width: 300px;
+                width: 200px;
             }
             .test1{
-                background-color: rgb(3, 160, 42);
+                background-color: rgb(132, 218, 233);
                 height: 50px;
-                width: 300px;
+                width: 200px;
             }
             body{
-                background-color: rgb(3, 149, 160);
+                background-color: rgb(180, 230, 173);
             }
             .lastDiv{
                 position: relative;
-                background-color: rgb(74, 160, 3);
+                background-color: rgb(105, 160, 3);
             }
             .title{
                 font-size: 50px;
-                color: rgb(255, 0, 0);
+                color: rgb(0, 255, 106);
             }
         </style>
         <script>
@@ -33,9 +34,9 @@
                 var nmdxr1 = document.getElementById("quantity2");
                 var ultraboost = document.getElementById("quantity3");
                 var checkout = document.getElementById("checkout");
-                var build1 = "";
+                var build = "";
                 if (airprestos.value > 0){
-                    build1 += airprestos.value + " Air Prestos: $" + (airprestos.value*109.99).toFixed(2) + "<br>";
+                    build += airprestos.value + " Air Prestos: $" + (airprestos.value*109.99).toFixed(2) + "<br>";
                     var airprestosCost = airprestos.value*109.99;
                     var airprestosProfit = (airprestos.value*109.99 - airprestos.value*89.99).toFixed(2);
                 }else{
@@ -43,7 +44,7 @@
                     var airprestosProfit = 0;
                 }
                 if (nmdxr1.value > 0){
-                    build1 += nmdxr1.value + " NMD XR1: $" + (nmdxr1.value*149.99).toFixed(2) + "<br>";
+                    build += nmdxr1.value + " NMD XR1: $" + (nmdxr1.value*149.99).toFixed(2) + "<br>";
                     var nmdxr1Cost = nmdxr1.value*149.99;
                     var nmdxr1Profit = (nmdxr1.value*149.99 - nmdxr1.value*129.99).toFixed(2);
                 }else{
@@ -51,7 +52,7 @@
                     var nmdxr1Profit = 0;
                 }
                 if (ultraboost.value > 0){
-                    build1 += ultraboost.value + " Ultra Boosts: $" + (ultraboost.value*179.99).toFixed(2) + "<br>";
+                    build += ultraboost.value + " Ultra Boost: $" + (ultraboost.value*179.99).toFixed(2) + "<br>";
                     var ultraboostCost = ultraboost.value*179.99;
                     var ultraboostProfit = (ultraboost.value*179.99 - ultraboost.value*159.99).toFixed(2);
                 }else{
@@ -61,141 +62,151 @@
                 var consoleProfit = console.log("You made $" + parseFloat(airprestosProfit + nmdxr1Profit + ultraboostProfit).toFixed(2));
                 if (airprestosCost + nmdxr1Cost + ultraboostCost > 200){
                     var shipping = 0;
-                    build1 += "Free Shipping <br>";
+                    build += "Free Shipping <br>"
                 }else{
-                    var shipping = parseInt(10);
+                    var shipping = parseFloat(24.99);
                     if (airprestosCost + nmdxr1Cost + ultraboostCost == 0){
                         shipping = 0;
-                }else{
-                    var shipping = parseInt(25);
-                    if (airprestosCost + nmdxr1Cost + ultraboostCost > 100 && airprestosCost + nmdxr1Cost + ultraboostCost < 200);
-
                     }
-                    build1 += "Shipping Fee: $" + shipping + "<br>";
+                    build += "Shipping Fee: $" + shipping + "<br>";
                 }
-                var total = airprestosCost + nmdxr1Cost + ultraboostCost;
-                var subtotal = (total)*0.0875 + total + shipping;
-                build1 += "Tax: $" + (total*0.0875).toFixed(2) + "<br>";
-                build1 += "_________________________________________________<br>";
-                build1 += "Total Cost: $" + subtotal.toFixed(2);
-                checkout.innerHTML = build1;
+                var threeTotal = airprestosCost + nmdxr1Cost + ultraboostCost;
+                var subtotal = (threeTotal)*0.0875 + threeTotal + shipping;
+                
+                build += "Tax: $" + (threeTotal*0.0875).toFixed(2) + "<br>";
+                build += "__________________________________________________<br>";
+                build += "Total Cost: $" + subtotal.toFixed(2);
+                checkout.innerHTML = build;
                 
             }
-            function airprestostotal(){
-                var airprestosQuantity = document.getElementById("quantity1");
-                var airprestosTotal = airprestosQuantity.value *109.99;
+            function airprestos(){
+                var airprestosQuantitiy = document.getElementById("quantity1");
+                var airprestos = airprestosQuantitiy.value *109.99;
                 var airprestosDiv = document.getElementById("airprestosDiv");
-                var build2 = "";
-                build2 += airprestosQuantity.value + " Air Prestos is " + "($" + airprestosTotal.toFixed(2) + ")";
-                airprestosDiv.innerHTML = build2;
+                var build = "";
+                build += airprestosQuantitiy.value + " Air Prestos" + " ($ " + airprestos.toFixed(2) +")";
+                airprestosDiv.innerHTML = build;
             }
             function nmdxr1(){
                 var nmdxr1Quantity = document.getElementById("quantity2");
                 var nmdxr1Div = document.getElementById("nmdxr1Div");
                 var nmdxr1Total = nmdxr1Quantity.value*149.99;
-                var build3 = "";
-                build3 += nmdxr1Quantity.value + " NMD XR1" + "($" + nmdxr1Total.toFixed(2) + ")";
-                nmdxr1Div.innerHTML = build3;
+                var build = "";
+                build += nmdxr1Quantity.value + " NMD XR1" + " ($ " + nmdxr1Total.toFixed(2) + ")";
+                nmdxr1Div.innerHTML = build;
             }
             
             function ultraboost(){
                 var ultraboostQuantitiy = document.getElementById("quantity3");
                 var ultraboostDiv = document.getElementById("ultraboostDiv");
                 var ultraboostTotal = ultraboostQuantitiy.value*179.99;
-                var build4 = "";
-                build4 += ultraboostQuantitiy.value + " " + "    ($ " + ultraboostTotal.toFixed(2) + ")";
-                ultraboostDiv.innerHTML = build4;
+                var build = "";
+                build += ultraboostQuantitiy.value + " Ultra Boost" + " ($ " + ultraboostTotal.toFixed(2) + ")";
+                ultraboostDiv.innerHTML = build;
             }
             function ProceedCheckout(){
                 //Items
                 var airprestos = document.getElementById("quantity1");
                 var nmdxr1 = document.getElementById("quantity2");
                 var ultraboost = document.getElementById("quantity3");
-                var message = document.getElementById("message");
-                //Shipping
-                var Name = document.getElementById("Name");
+                var message = document.getElementById("TrueOrNot");
+                // Shipping
+                var FullName = document.getElementById("FullName");
                 var streetAddress = document.getElementById("streetAddress");
                 var ZipCode = document.getElementById("ZipCode");
                 var State = document.getElementById("State");
                 //Contact Info
+                var phone = document.getElementById("phone");
                 var email = document.getElementById("email");
                 //Paying
                 var CreditCard = document.getElementById("CreditCardEnding");
-                var build5 = "";
-                if (parseInt(airprestos.value) > 0 || parseInt(nmdxr1.value) > 0 || parseInt(ultraboost.value)){
-                    build5 += "You are Purchasing... \n";
+                var EXP = document.getElementById("EXP");
+                build = "";
+                if (airprestos.value > 0 || nmdxr1.value > 0 || ultraboost.value){
+                    build += "You are Purchasing.... \n\n"
                 }
                 if (airprestos.value > 0){
-                    build5 += airprestos.value + " Air Prestos: $" + (airprestos.value*109.99).toFixed(2) + "\n";
+                    build += airprestos.value + " Air Prestos: $" + (airprestos.value*109.99).toFixed(2) + "\n";
                     var airprestosCost = airprestos.value*109.99;
                 }else{
                     var airprestosCost = 0;
                 }
                 if (nmdxr1.value > 0){
-                    build5 += nmdxr1.value + " NMD XR1: $" + (nmdxr1.value*149.99).toFixed(2) + "\n";
+                    build += nmdxr1.value + " NMD XR1: $" + (nmdxr1.value*149.99).toFixed(2) + "\n";
                     var nmdxr1Cost = nmdxr1.value*149.99;
                 }else{
                     var nmdxr1Cost = 0;
                 }
                 if (ultraboost.value > 0){
-                    build5 += ultraboost.value + " Ultra Boost: $" + (ultraboost.value*179.99).toFixed(2) + "\n";
+                    build += ultraboost.value + " Ultra Boost: $" + (ultraboost.value*179.99).toFixed(2) + "\n";
                     var ultraboostCost = ultraboost.value*179.99;
                 }else{
                     var ultraboostCost = 0;
                 }
                 if (airprestosCost + nmdxr1Cost + ultraboostCost > 50){
                     var shipping = 0;
-                    build5 += "Free Shipping \n"
+                    build += "Free Shipping \n"
                 }else{
-                    var shipping = parseInt(10);
+                    var shipping = parseFloat(9.99);
                     if (airprestosCost + nmdxr1Cost + ultraboostCost == 0){
-                        shipping = 0;
+                        shipping = 0.00;
                     }
-                    build5 += "Shipping Fee: " + shipping + "\n";
+                    build += "Shipping Fee: " + shipping + "\n";
                 }
-                var total = airprestosCost + nmdxr1Cost + ultraboostCost;
-                var subtotal = (total)*0.0875 + total + shipping;
-                build5 += "Tax: $" + (total*0.0875).toFixed(2) + "\n";
-                build5 += "______________________________________________\n";
-                build5 += "Total Cost: $" + subtotal.toFixed(2) + "\n";
-                build5 += "Receiver: " + Name.value + "\n";
-                build5 += "Shipping To: " + streetAddress.value + " " + " " + ZipCode.value + " " + State.value + "\n";
-                build5 += "Email: " + email.value + "\n";
-                build5 += "Paying With Credit Card ending in: " + CreditCard.value + "\n\n";
-                build5 += "A confirmation has been sent to your email. Your shoe(s) should arrive within 3-5 buisness days.";
-                if(Name.value == "" || streetAddress.value == "" || ZipCode.value == "" || State.value == "" || email.value == "" || CreditCard.value == "" || EXP.value == ""){
-                    var build6 = "";
-                    build6 += "<h4>You cannot place an order because</h4>";
-                    build6 += " - You did not make a purchase <br>";
-                    build6 += " - You did not fill out the necessary info";
-                message.innerHTML = build5;
-                message.innerHTML = build6;
+                var threeTotal = airprestosCost + nmdxr1Cost + ultraboostCost;
+                var subtotal = (threeTotal)*0.0875 + threeTotal + shipping;
+                build += "Tax: $" + (threeTotal*0.0875).toFixed(2) + "\n";
+                build += "___________________________________________________ \n";
+                build += "Total Cost: $" + subtotal.toFixed(2) + "\n\n\n";
+                build += "Receiver: " + FullName.value + "\n";
+                build += "Shipping To: " + streetAddress.value + " " + " " + ZipCode.value + " " + State.value + "\n";
+                build += "Phone #: " + phone.value + "\n";
+                build += "Email: " + email.value + "\n\n";
+                build += "Paying With Credit Card ending in: " + CreditCard.value + "\n\n";
+                build += "A confirmation has been sent to your email. Your package should arrive within 3-5 business days."
+                
+                var inputs = document.getElementsByTagName
+                
+                if(FullName.value == "" || streetAddress.value == "" || ZipCode.value == "" || State.value == "" || phone.value == "" || email.value == "" || CreditCard.value == "" || EXP.value == ""){
+                    var build1 = "";
+                    build1 += "<h4> You cannot place an order because</h4>";
+                    build1 += " - You did not make a purchase <br>";
+                    build1 += " - You did not fill out the necessary information ";
+                    message.innerHTML = build1;
                 }else if (airprestos.value > 0 || nmdxr1.value > 0 || ultraboost.value > 0){
                     location.reload();
+                        alert(build);
+                }else{
+                    var build1 = "";
+                    build1 += "<h4> You cannot place an order because</h4>";
+                    build1 += " - You did not make a purchase <br>";
+                    message.innerHTML = build1;
                 }
             }
+ 
         </script>
 
     </head>
     <body>
-        <div class = "Div">
-            <p align = "center" class="title">Shoes</p>
+        <div class = "allDiv">
+            <p align = "center" class="title"> Atletic Shoes </p>
 
             <div class = "div1">
-                <h1>Air Prestos</h1>
-                <p>
+                <h1> Air Prestos </h1>
+                <p></p>
                     <img src="images\airprestos.jpg">
                     <br>
                     <br>
                     $109.99
                 </p>
-                <p>                        
+                <p>
+                    -New and nice comforting Nike shoes <br> -Great athletic shoe <br> -Comfortable material used
                     <br>
                     <br>
                     <input id = "quantity1" placeholder="Enter Quantity" type="text">
-                    <button onclick = "airprestostotal()"> Calculate Cost </button>
-                    <div id = "airprestosDiv"> </div>
-                    -New and nice comforting Nike shoes <br> -Great athletic shoe <br> -Comfortable material used
+                    <button onclick = "airprestos()"> Cost </button>
+                    <div id = "airprestosDiv"></div>
+                    
                 </p>
             </div>
 
@@ -205,19 +216,20 @@
         
             <div class="div2">
                 <h1> NMD XR1 </h1>
-                <p>
+                <p></p>
                     <img src = "images\nmdxr1.jpg">
                     <br>
                     <br>
                     $149.99
                 </p>
                     <p>
+                        -Has very comfortable boost <br> -Durable material for stylish running shoes <br> -Uses soft material as well
                     <br>
                     <br>
                     <input id= "quantity2" placeholder="Enter Quantity" type="text">
-                    <button onclick = "nmdxr1()">Calculate Cost</button>
+                    <button onclick = "nmdxr1()">Cost</button>
                     <div id = "nmdxr1Div"></div>
-                    -Has very comfortable boost <br> -Durable material for stylish running shoes <br> -Uses soft material as well
+
                 </p>
             </div>
             
@@ -227,16 +239,16 @@
 
             <div class="div3">
                 <h1> Ultra Boost </h1>
-                <p>
+                <p></p>
                     <img src = "images\ultraboost.jpg">
                 </p>
-                <p>
+                <p></p>
                     $179.99<br><br>
                     -Has similar boost to the NMD XR1 <br> -Locks around the foot to secure the shoe on the feet <br> -Soft and durable material for stylist running shoes
                     <br><br>
                     <input id= "quantity3" placeholder="Enter Quantity" type="text">
-                    <button onclick="ultraboost()">Calculate Cost</button>
-                    <div id = "ultraboostDiv"> </div>
+                    <button onclick="ultraboost()">Cost</button>
+                    <div id = ""></div>
                 </p>
             </div>
         </div>
@@ -244,42 +256,57 @@
         <br>
         <br>
         
-        <div class="div4">
+        <div class="lastDiv">
             <br>
-            <b> Shipping Fee is $10 ,  Purchase over $200 to get free Shipping!</b>
-            <p> <button class = "test" onclick="total()"> <b> Total </b> </button> </p>
+            <b> Shipping Fee is $25, Purchase over $200 to get free Shipping!</b>
+            <p><button class = "test" onclick="total()"> <b> Subtotal </b> </button> </p>
             <br>
-            <div id = "checkout"></div><br>
+            <div id = "checkout"> </div><br>
 
             Full Name<br>
-            <input id= "Name" type="text" placeholder="Last Name, First Name" size="24"> <br>
+            <input id= "FullName" type="text" placeholder="Last Name, First Name" size="28"> <br><br><br>
+
             Shipping Address<br>
-            <input id= "streetAddress" placeholder="Street Address" type="text" size="24">
-            <input id= "ZipCode" placeholder="Zip Code" type="text" size = "24"><br><br>
-            <input id= "State" placeholder="State/Region" type="text" size="24"> <br><br>
+            <input id= "streetAddress" placeholder="Street Address" type="text" size="35">
+            <input id= "ZipCode" placeholder="Zip Code" type="text" size = "8"><br><br>
+            <input id= "State" placeholder="State/Province/Region" type="text" size="20"> <br><br>
+
             Contact Information<br>
+
+            <input id= "phone" placeholder="Phone # " type="text" size="18">
             <input id= "email" placeholder="Email" type="text" size="33"> <br><br><br>
-            <h3>Leave Billing Address blank if it is the same as your shipping address</h3>
+
+            <h3>Leave Billing Address blank if it's the same as your shipping address</h3>
             Billing Address<br>
             <input id= "BillingAddress" placeholder="Street Address" type="text" size="24">
-            <input id= "BillingZipCode" placeholder="Zip Code" type="text" size = "24"><br><br>
-            <input id= "State" placeholder="State/Region" type="text" size="24"><br><br>
+            <input id= "BillingZipCode" placeholder="Zip Code" type="text" size = "8"><br><br>
+            <input id= "State" placeholder="State/Region" type="text" size="20"><br><br>
             Card Number<br>
-            <input id= "CreditCard1" type="text" size="24"> -
-            <input id= "CreditCard2" type="text" size="24"> -
-            <input id= "CreditCard3" type="text" size="24"> -
-            <input id= "CreditCardEnding" type="text" size="24"><br>
+            <input id= "CreditCard1" type="text" size="1"> -
+            <input id= "CreditCard2" type="text" size="1"> -
+            <input id= "CreditCard3" type="text" size="1"> -
+            <input id= "CreditCardEnding" type="text" size="1"> <font size="2"><b>(Ex: 1111 - 2222 - 3333 - 4444)</b></font><br>
             Expiration Date<br>
-            <input id= "EXP" placeholder="MM/DD/YY" type="text" size="24">
+            <input id= "EXP" placeholder="MM/DD/YY" type="text" size="10">
             
 
             <br>
             <br>
             <br>
-            <div id = "message"></div>
-            <p> <button class = "test1" onclick="ProceedCheckout()"><b> Place Order </b></button></p>
-            <br>
 
+            <div id = "TrueOrNot"> </div>
+            <p><button class = "test1" onclick="ProceedCheckout()"><b>Place Order</b></button></p>
+            <br>
+            <div id = "checkoutButton"></div>
         </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
     </body>
 </html> 
